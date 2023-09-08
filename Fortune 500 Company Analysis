@@ -1,0 +1,34 @@
+# Identify what industry offers at least 15 PTO Days
+SELECT industry, paid_time_off_days
+FROM fortune_companies
+GROUP BY industry
+HAVING paid_time_off_days >= 15
+ORDER BY paid_time_off_days DESC;
+
+# Identify what company has the longest employee tenure
+SELECT company_name, avg_employee_tenure
+FROM fortune_companies
+ORDER BY avg_employee_tenure DESC;
+
+# Identify what company offers both healthcare benefits as well as at least 10 weeks of maternity leave
+SELECT company_name, healthcare_benefits, maternity_leave_weeks
+FROM fortune_companies
+WHERE healthcare_benefits = 1
+AND maternity_leave_weeks >= 10
+GROUP BY company_name
+ORDER BY maternity_leave_weeks DESC;
+
+#Identify the rounded average revenue per industry
+SELECT industry, ROUND(AVG(revenue)) as 'avg_revenue'
+FROM fortune_companies
+GROUP BY industry;
+
+#Categorize the size of the company based on the number of employees
+SELECT company_name, employees,
+CASE WHEN employees >= 100000 THEN 'Very Large Company'
+WHEN employees >= 10000 THEN 'Large Company'
+WHEN employees >= 3000 THEN 'Medium Company'
+ELSE 'Small Company'
+END AS Company_Size
+FROM fortune_companies
+ORDER BY employees DESC;
