@@ -18,12 +18,12 @@ AND maternity_leave_weeks >= 10
 GROUP BY company_name
 ORDER BY maternity_leave_weeks DESC;
 
-#Identify the rounded average revenue per industry
+# Identify the rounded average revenue per industry
 SELECT industry, ROUND(AVG(revenue)) as 'avg_revenue'
 FROM fortune_companies
 GROUP BY industry;
 
-#Categorize the size of the company based on the number of employees
+# Categorize the size of the company based on the number of employees
 SELECT company_name, employees,
 CASE WHEN employees >= 100000 THEN 'Very Large Company'
 WHEN employees >= 10000 THEN 'Large Company'
