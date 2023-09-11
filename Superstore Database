@@ -1,4 +1,4 @@
-#This project uses the follow data about a Superstore: 
+# This project uses the follow data about a Superstore: 
 
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
@@ -28,27 +28,27 @@ VALUES
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
 
-#Use a SELECT statement to order the items by price.
+# Use a SELECT statement to order the items by price.
 SELECT item_name, price
 FROM superstore
 ORDER BY price desc
 
-#Count the total stock quantity of Appliances
+# Count the total stock quantity of Appliances
 SELECT count(stock_quantity)
 FROM superstore
 WHERE category = 'Appliances'
 
-#Find the average rating of the Smart LED TV
+# Find the average rating of the Smart LED TV
 SELECT average_rating
 FROM superstore
 WHERE item_name = 'Smart LED TV'
 
-#Find the minimum price of items in the category Kitchen Supplies
+# Find the minimum price of items in the category Kitchen Supplies
 SELECT MIN(price)
 FROM superstore
 WHERE category = 'Kitchen Supplies'
 
-#Identify the items, prices, and average rating of the item where these criteria apply
+# Identify the items, prices, and average rating of the item where these criteria apply
 SELECT item_name, price, average_rating
 FROM superstore
 WHERE price < 100
