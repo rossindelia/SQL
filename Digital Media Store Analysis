@@ -15,6 +15,7 @@ SELECT *
 FROM chinook.customers
 WHERE country = 'Brazil';
 
+
 #3. Show invoices of customers from Brazil 
 
 SELECT customers.firstname, customers.lastname, invoices.BillingCountry, invoices.InvoiceId, invoices.InvoiceDate
@@ -112,6 +113,7 @@ JOIN chinook.invoices
 ON invoices.CustomerId = customers.CustomerId
 WHERE employees.Title = 'Sales Support Agent'
 GROUP BY employees.FirstName
+
 
 #14. What sales agent made the most money in 2009?
 
